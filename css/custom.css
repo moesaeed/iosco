@@ -1,0 +1,686 @@
+/* fonts */
+@font-face {
+    font-family: 'Acumin Pro';
+    src: url('../fonts/AcuminPro-Bold.woff2') format('woff2'),
+        url('../fonts/AcuminPro-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro';
+    src: url('../fonts/AcuminPro-Light.woff2') format('woff2'),
+        url('../fonts/AcuminPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acumin Pro';
+    src: url('../fonts/AcuminPro-Regular.woff2') format('woff2'),
+        url('../fonts/AcuminPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+/* @font-face {
+	font-family: 'Acumin';
+	src: url('../fonts/Acumin.woff2') format('woff2'),
+	     url('../fonts/Acumin.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+} */
+
+/* general style */
+:root {
+    --primary-color: #88163D;
+    --secondary-color: #1A4760;
+    --secondary-color-1: #407E8F;
+    --secondary-color-2: #373B3E;
+    --secondary-color-3: #317F86;
+
+    --link-color: var(--primary-color);
+}
+
+body {
+    /* font-family: "Roboto", sans-serif; */
+    font-family: "Acumin Pro", sans-serif;
+    font-size: 16px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.btn {
+    width: 100%;
+    max-width: 135px;
+    display: inline-block;
+    border-radius: 2rem;
+
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+
+    color: #FFF;
+    padding: 7px 12px;
+
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.4;
+
+    text-align: center;
+}
+.btn.btn-white {
+    background: #FFF;
+    color: var(--primary-color);
+}
+.btn.btn-large {
+    max-width: 200px;
+    font-size: 1.5rem;
+    padding: 12px;
+}
+
+.btn:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: #FFF;
+}
+.btn.btn-white:hover {
+    color: #FFF;
+    border-color: #FFF;
+    background: var(--primary-color);
+}
+
+@media (min-width: 1400px) {
+    .container.short {
+        max-width: 1069px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+/* header */
+header {
+    position: relative;
+}
+header .navbar {
+    padding: 60px 0 40px;
+}
+.navbar .navbar-brand-wrap {}
+.navbar .navbar-brand-wrap .navbar-brand {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+.navbar-nav {
+    gap: 50px;
+}
+.navbar-nav .nav-item {}
+.navbar-nav .nav-item .nav-link {
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    color: var(--primary-color);
+    position: relative;
+    text-align: center;
+}
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item .nav-link.active {
+    color: var(--secondary-color-1);
+}
+.navbar-nav .nav-item .nav-link:hover::after,
+.navbar-nav .nav-item .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 8px;
+    background: url("../images/icon_nav_hover_lines.svg") no-repeat center;
+}
+
+.navbar-toggler {
+    /* position: absolute;
+    top: 50%;
+    transform: translateY(-50%); */
+    border: none;
+    padding: 0;
+}
+.navbar-toggler-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.navbar-toggler.collapsed .navbar-toggler-icon {
+    background-image: url("../images/icon_menu.svg");
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    background-image: url("../images/icon_cross.svg");
+}
+
+/* header - end */
+
+/* hero */
+.heroWrap {
+    position: relative;
+    padding: 5rem 0 6.75rem;
+}
+
+.heroWrap::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 67px;
+    background-image: url("../images/border_bg_design.svg");
+    background-position: top left;
+    background-repeat: repeat-x;
+}
+.heroWrap .txtWrap {}
+.heroWrap .txtWrap .headline {
+    font-size: 2.75rem;
+    line-height: 3.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--secondary-color);
+}
+.heroWrap .txtWrap p {
+    color: #000;
+    margin-bottom: 1.5rem;
+
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+.heroWrap .txtWrap .disclaimer {
+    color: #373B3E;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.2;
+    padding-left: 12px;
+}
+.heroWrap .txtWrap .disclaimer a {
+    font-weight: 400;
+}
+.heroWrap .infoWrap {
+    gap: 4px;
+    display: flex;
+    justify-content: center;
+}
+.heroWrap .infoWrap .icon {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+.heroWrap .infoWrap .txt {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    color: var(--primary-color);
+}
+
+/* hero - end */
+
+/* ceoMessageWrap  */
+.ceoMessageWrap {
+    position: relative;
+    padding: 6.25rem 0 3.125rem;
+}
+.ceoMessageWrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    background-color: var(--primary-color);
+    z-index: -1;
+}
+.ceoMessageWrap .headline {
+    font-weight: 400;
+    font-size: 2.25rem;
+    line-height: 1.2;
+
+    margin-bottom: 1.5rem;
+    color: white;
+    text-align: center;
+}
+.ceoMessageWrap .messageWrap {
+    position: relative;
+    padding-top: 85px;
+}
+.ceoMessageWrap .messageWrap .ceoImg {
+    width: 128px;
+    height: 128px;
+    border-radius: 100%;
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.ceoMessageWrap .messageWrap .ceoImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ceoMessageWrap .messageWrap .txtWrap {
+    border: 3px solid var(--primary-color);
+    background: #FFF;
+    border-radius: 9px;
+
+    padding: 70px 15px;
+}
+.ceoMessageWrap .messageWrap .txtWrap > div[class^="col-"] {
+    padding: 0 25px;
+}
+.ceoMessageWrap .messageWrap .txtWrap p {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.2;
+
+    color: var(--secondary-color-2);
+
+    margin-bottom: 2rem;
+}
+.ceoMessageWrap .messageWrap .txtWrap > div[class^="col-"] p:last-child {
+    margin-bottom: 0;
+}
+
+/* ceoMessageWrap - end  */
+
+/* scheduleWrap */
+.scheduleWrap {
+    position: relative;
+    padding: 3.125rem 0;
+}
+.scheduleWrap .headlineWrap {
+    text-align: center;
+}
+.scheduleWrap .headlineWrap .headline {
+    color: var(--primary-color);
+
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+.scheduleWrap .scheduleListing {}
+.scheduleWrap .scheduleListing .nav-tabs {
+    border: unset;
+    gap: 8px;
+}
+.scheduleWrap .scheduleListing .nav-tabs .nav-item {}
+.scheduleWrap .scheduleListing .nav-tabs .nav-item .nav-link {
+    padding: 0;
+    border: unset;
+}
+
+.scheduleWrap .scheduleListing .tab-content {}
+.scheduleWrap .scheduleListing .tab-content .tab-pane {
+    padding-top: 1.5rem;
+}
+.scheduleWrap .scheduleListing .tab-content .tab-pane .heading {
+    padding-left: 0.75rem;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.scheduleWrap .scheduleListing .dateCard {
+    border: 3px solid var(--primary-color);
+    border-radius: 9px;
+    padding: 1.5rem 0.75rem;
+    text-align: center;
+    color: var(--primary-color);
+
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 400;
+    min-width: 105px;
+}
+.scheduleWrap .scheduleListing .dateCard .lbl {
+    margin-bottom: 0.75rem;
+}
+.scheduleWrap .scheduleListing .dateCard .date {
+    font-weight: 700;
+}
+.scheduleWrap .scheduleListing .dateCard .month {
+    font-weight: 700;
+    font-size: 1rem;
+}
+.scheduleWrap .scheduleListing .nav-tabs .nav-item .nav-link:hover .dateCard ,
+.scheduleWrap .scheduleListing .nav-tabs .nav-item .nav-link.active .dateCard {
+    background: var(--primary-color);
+    color: white;
+
+}
+
+.scheduleWrap .scheduleListing .meetingCard {
+    background: #FAFAFA;
+    border-radius: 9px;
+    padding: 1.5rem;
+    margin-bottom: 6px;
+    color: #000000;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 300;
+}
+.scheduleWrap .scheduleListing .meetingCard .time {
+    font-weight: 700;
+    margin-bottom: 0.375rem;
+}
+.scheduleWrap .scheduleListing .meetingCard .lbl {
+}
+/* scheduleWrap - end  */
+
+/* infoCardWrap */
+.infoCardWrap {
+    padding: relative;
+    padding: 3.125rem 0;
+}
+.infoCardWrap .infoCard {
+    padding: 2.875rem 2.5rem 2.5rem;
+    background: var(--primary-color);
+    border-radius: 9px;
+    color: #FFF;
+}
+
+.infoCardWrap .headerRow {
+    margin: 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 5rem;
+}
+.infoCardWrap .headerRow .headline {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+.infoCardWrap .headerRow p {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+.infoCardWrap .headerRow p a:not(.btn) {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.infoCardWrap .videoRow {
+    margin-bottom: 5rem;
+}
+.infoCardWrap .videoWrap .info {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.infoCardWrap .videoWrap .iframeWrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 9px;
+    overflow: hidden;
+    background: #000;
+}
+.infoCardWrap .videoWrap .iframeWrap iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.infoCardWrap .iconInfoWrap {
+    text-align: center;
+    max-width: 275px;
+    margin: 0 auto;
+}
+.infoCardWrap .iconInfoWrap img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 8px;
+}
+.infoCardWrap .iconInfoWrap .headline {
+    font-weight: 400;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+.infoCardWrap .iconInfoWrap p {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+.infoCardWrap .iconInfoWrap p:last-child {
+    margin-bottom: 0;
+}
+
+/* infoCardWrap - end */
+
+/* newsListingWrap */
+.newsListingWrap {
+    position: relative;
+    padding: 2.5rem 0;
+}
+.newsListingWrap .headlineWrap {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.newsListingWrap .headlineWrap .headline {
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--secondary-color-3);
+}
+
+.newsListingWrap .newsCard {
+    padding: 2rem;
+    height: 100%;
+    border-radius: 9px;
+    text-align: center;
+    box-shadow: 0px 0px 2px 0px #00000040;
+}
+.newsListingWrap .newsCard img {
+    width: 125px;
+    height: 128px;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 1.5rem;
+}
+.newsListingWrap .newsCard .headline {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.375rem;
+}
+.newsListingWrap .newsCard p {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-bottom: 2.25rem;
+    color: #373B3E;
+}
+.newsListingWrap .newsCard p:last-child {
+    margin-bottom: 0;
+}
+
+/* newsListingWrap - end */
+
+/* footer */
+footer {
+    margin-top: 2.5rem;
+    padding: 2.5rem 0 0;
+    position: relative;
+    background: var(--primary-color);
+    color: #FFF;
+}
+footer .footerInfo {}
+footer .footerInfo .headline {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+footer .footerInfo p {
+    font-weight: 300;
+    font-size: 0.8125rem;
+    line-height: 1.2;
+}
+
+footer .footerLogo {
+}
+footer .footerLogo .headline {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+footer .footerLogo .imgWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+
+footer .copyrightTxtWrap {
+    margin-top: 6.5rem;
+    text-align: center;
+}
+footer .copyrightTxtWrap p {
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    color: white;
+}
+/* footer - end */
+
+
+@media (max-width: 991px) {
+    .heroWrap {
+        padding-top: 3rem;
+    }
+    header .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .navbar-nav {
+        padding-top: 3.125rem;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+}
+@media (max-width: 767px) {
+    .heroWrap {
+        padding-top: 2rem;
+    }
+    .heroWrap .imgWrap {
+        margin-bottom: 4.5rem;
+    }
+    .container {
+        --bs-gutter-x: 3rem;
+    }
+
+    .heroWrap .txtWrap .headline {
+        font-size: 2.25rem;
+        margin-bottom: 0;
+    }
+
+    .heroWrap .txtWrap p {
+        font-size: 1.25rem;
+    }
+    .heroWrap .txtWrap .disclaimer br {
+        display: none;
+    }
+
+    .ceoMessageWrap {
+        padding-bottom: 1.25rem;
+    }
+    .ceoMessageWrap .headline {
+        font-size: 2rem;
+    }
+    .ceoMessageWrap::before {
+        height: 450px;
+    }
+    .ceoMessageWrap .messageWrap {
+        --bs-gutter-x: 0;
+    }
+    .ceoMessageWrap .messageWrap .txtWrap > div[class^="col-"] {
+        padding: 0 15px;
+    }
+    .ceoMessageWrap .messageWrap .txtWrap p strong {
+        font-weight: 400;
+    }
+
+    .scheduleWrap {
+        padding: 1.25rem 0;
+    }
+
+    .scheduleWrap .scheduleListing .nav-tabs {
+        flex-wrap: nowrap;
+        overflow: hidden;
+        overflow-x: auto;
+    }
+
+    .infoCardWrap {
+        padding: 1.25rem 0;
+    }
+    .infoCardWrap .container {
+        padding: 0;
+    }
+    .infoCardWrap .headerRow .headline {
+        margin-bottom: 1.5rem;
+    }
+    .infoCardWrap .headerRow p {
+        margin-bottom: 1.5rem;
+    }
+
+    .infoCardWrap .headerRow {
+        padding-bottom: 1.5rem;
+        margin-bottom: 3.5rem;
+    }
+    .infoCardWrap .videoRow {
+        margin-bottom: 3.5rem;
+    }
+
+    .infoCardWrap .iconInfoWrap {
+        margin-bottom: 3.5rem;
+    }
+
+    .newsListingWrap .newsCard {
+        margin-bottom: 1.5rem;
+        height: auto;
+    }
+
+    footer .footerInfo {
+        margin-bottom: 5rem;
+    }
+}
