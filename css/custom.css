@@ -1,8 +1,7 @@
 /* fonts */
 @font-face {
     font-family: 'Acumin Pro';
-    src: url('../fonts/AcuminPro-Bold.woff2') format('woff2'),
-        url('../fonts/AcuminPro-Bold.woff') format('woff');
+    src: url('../fonts/066ce24dae3730ed6c648b09efaea93a.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -10,8 +9,7 @@
 
 @font-face {
     font-family: 'Acumin Pro';
-    src: url('../fonts/AcuminPro-Light.woff2') format('woff2'),
-        url('../fonts/AcuminPro-Light.woff') format('woff');
+    src: url('../fonts/066ce24dae3730ed6c648b09efaea93a.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -19,8 +17,7 @@
 
 @font-face {
     font-family: 'Acumin Pro';
-    src: url('../fonts/AcuminPro-Regular.woff2') format('woff2'),
-        url('../fonts/AcuminPro-Regular.woff') format('woff');
+    src: url('../fonts/066ce24dae3730ed6c648b09efaea93a.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -62,6 +59,7 @@ a {
 }
 
 .btn {
+    font-stretch: extra-condensed;
     width: 100%;
     max-width: 135px;
     display: inline-block;
@@ -84,6 +82,7 @@ a {
     color: var(--primary-color);
 }
 .btn.btn-large {
+    font-stretch: extra-condensed;
     max-width: 200px;
     font-size: 1.5rem;
     padding: 12px;
@@ -136,6 +135,7 @@ header .navbar {
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 1.75rem;
+    font-stretch: extra-condensed;
     color: var(--primary-color);
     position: relative;
     text-align: center;
@@ -253,6 +253,7 @@ header .navbar {
     z-index: -1;
 }
 .ceoMessageWrap .headline {
+    font-stretch: extra-condensed;
     font-weight: 400;
     font-size: 2.25rem;
     line-height: 1.2;
@@ -292,6 +293,7 @@ header .navbar {
     padding: 0 25px;
 }
 .ceoMessageWrap .messageWrap .txtWrap p {
+    font-stretch: semi-condensed;
     font-weight: 300;
     font-size: 1.25rem;
     line-height: 1.2;
@@ -315,6 +317,7 @@ header .navbar {
     text-align: center;
 }
 .scheduleWrap .headlineWrap .headline {
+    font-stretch: extra-condensed;
     color: var(--primary-color);
 
     font-weight: 400;
@@ -339,6 +342,7 @@ header .navbar {
     padding-top: 1.5rem;
 }
 .scheduleWrap .scheduleListing .tab-content .tab-pane .heading {
+    font-stretch: extra-condensed;
     padding-left: 0.75rem;
     font-weight: 400;
     font-size: 1.5rem;
@@ -348,6 +352,7 @@ header .navbar {
 }
 
 .scheduleWrap .scheduleListing .dateCard {
+    font-stretch: condensed;
     border: 3px solid var(--primary-color);
     border-radius: 9px;
     padding: 1.5rem 0.75rem;
@@ -391,6 +396,7 @@ header .navbar {
     margin-bottom: 0.375rem;
 }
 .scheduleWrap .scheduleListing .meetingCard .lbl {
+    font-stretch: condensed;
 }
 /* scheduleWrap - end  */
 
@@ -419,6 +425,7 @@ header .navbar {
     margin-bottom: 0;
 }
 .infoCardWrap .headerRow p {
+    font-stretch: semi-condensed;
     font-weight: 300;
     font-size: 1.25rem;
     line-height: 1.2;
@@ -472,6 +479,7 @@ header .navbar {
     margin-bottom: 1.5rem;
 }
 .infoCardWrap .iconInfoWrap p {
+    font-stretch: semi-condensed;
     font-weight: 300;
     font-size: 1.25rem;
     line-height: 1.2;
@@ -493,6 +501,7 @@ header .navbar {
     text-align: center;
 }
 .newsListingWrap .headlineWrap .headline {
+    font-stretch: extra-condensed;
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.2;
@@ -514,12 +523,14 @@ header .navbar {
     margin-bottom: 1.5rem;
 }
 .newsListingWrap .newsCard .headline {
+    font-stretch: extra-condensed;
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 1.2;
     margin-bottom: 0.375rem;
 }
 .newsListingWrap .newsCard p {
+    font-stretch: semi-condensed;
     font-weight: 300;
     font-size: 1rem;
     line-height: 1.2;
@@ -534,6 +545,7 @@ header .navbar {
 
 /* footer */
 footer {
+    font-stretch: extra-condensed;
     margin-top: 2.5rem;
     padding: 2.5rem 0 0;
     position: relative;
@@ -548,6 +560,7 @@ footer .footerInfo .headline {
     margin-bottom: 0.5rem;
 }
 footer .footerInfo p {
+    font-stretch: semi-condensed;
     font-weight: 300;
     font-size: 0.8125rem;
     line-height: 1.2;
