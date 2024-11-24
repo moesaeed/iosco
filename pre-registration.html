@@ -195,12 +195,13 @@
 							// alert("Form submitted successfully!");
 							let resError = true;
 							try {
-								let res = JSON.parse(response);
-								if (res && res.Status == "Y") {
+								//console.log(response);
+								//let res = JSON.parse(response);
+								if (response.Status == "Y") {
 									resError = false;
 								}
 							} catch (e) {
-								console.log("Error Catch: ", e);
+								console.log("Error Catch123: ", e);
 							}
 
 							if (resError === false) {
