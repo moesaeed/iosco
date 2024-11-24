@@ -102,6 +102,21 @@
 										<button type="submit" class="btn btn-submit">Submit</button>
 									</div>
 								</form>
+
+								<div class="confrmMsgWrap">
+									<div class="confrmMsg success">
+										<div class="headline">Thank You!</div>
+										<p>Your pre-registration has been submitted successfully. We appreciate your interest.</p>
+										<p>You should receive a confirmation email with further instructions soon. If you have any questions, feel free to contact our support team.</p>
+										<p>We're excited to have you with us.</p>
+									</div>
+									<div class="confrmMsg error">
+										<div class="headline">Error!</div>
+										<p>We encountered an issue while processing your request. This may be due to a technical problem or because your email address is not associated with IOSCO.</p>
+										<p>Please verify your email address and try again. If the issue persists, contact our support team for assistance.</p>
+										<p>We apologize for the inconvenience and thank you for your understanding.</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -189,48 +204,69 @@
 	<script src="./js/bootstrap.bundle.min.js" defer></script>
 
 	<!-- Google reCAPTCHA v3 script -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LejA3QqAAAAAFzmg21QmyiIrdTk4fbaaeeefyou"></script>
-    <script>
-        document.getElementById("contactForm1").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission
-            let submitBtn = this.querySelector(".btn-submit");
-            submitBtn.disabled = true;
+	<script src="https://www.google.com/recaptcha/api.js?render=6LejA3QqAAAAAFzmg21QmyiIrdTk4fbaaeeefyou"></script>
+	<script>
+		document.getElementById("contactForm1").addEventListener("submit", function(event) {
+			event.preventDefault(); // Prevent default form submission
+			let submitBtn = this.querySelector(".btn-submit");
+			submitBtn.disabled = true;
 
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LejA3QqAAAAAFzmg21QmyiIrdTk4fbaaeeefyou', {action: 'submit'}).then(function(token) {
+			grecaptcha.ready(function() {
+				grecaptcha.execute('6LejA3QqAAAAAFzmg21QmyiIrdTk4fbaaeeefyou', {action: 'submit'}).then(function(token) {
 
-                    // Prepare the data to send
-                    var data = {
-                        name: document.getElementById("name").value,
-                        email: document.getElementById("email").value,
-                        phone: document.getElementById("phone").value,
-                        subject: document.getElementById("subject").value,
-                        message: document.getElementById("message").value,
-                        captcha: token
-                    };
+					// Prepare the data to send
+					var data = {
+						name: document.getElementById("name").value,
+						email: document.getElementById("email").value,
+						phone: document.getElementById("phone").value,
+						subject: document.getElementById("subject").value,
+						message: document.getElementById("message").value,
+						captcha: token
+					};
 
-					alert("ReCaptcha Verified, Ready for submit");
+					// Send the data via AJAX POST
+					$.ajax({
+						// url: "https://iosco.sitefinityapps.com/apicustom/Contact/Contact",
+						url: "/contact-request.php",
+						type: "POST",
+						contentType: "application/json",
+						data: JSON.stringify(data),
+						success: function(response) {
+							// alert("Form submitted successfully!");
+							let resError = true;
+							try {
+								let res = JSON.parse(response);
+								if (res && res.Status == "Y") {
+									resError = false;
+								}
+							} catch (e) {
+								console.log("Error Catch: ", e);
+							}
 
-                    // Send the data via AJAX POST
-                    // $.ajax({
-                    //     url: "https://iosco.sitefinityapps.com/apicustom/PreRegister/PreRegister",
-                    //     type: "POST",
-                    //     contentType: "application/json",
-                    //     data: JSON.stringify(data),
-                    //     success: function(response) {
-                    //         alert("Form submitted successfully!");
-                    //         console.log("Success: ", response);
-                    //     },
-                    //     error: function(xhr, status, error) {
-                    //         console.log("Error: ", error);
-                    //     },
-                    //     complete: function() {
-                    //         submitBtn.disabled = false;
-                    //     }
-                    // });
-                });
-            });
-        });
-    </script>
+							if (resError === false) {
+								showConfirmationMsg("success");
+							} else {
+								showConfirmationMsg("error");
+							}
+						},
+						error: function(xhr, status, error) {
+							console.log("Error: ", error);
+							showConfirmationMsg("error");
+						},
+						complete: function() {
+							submitBtn.disabled = false;
+						}
+					});
+				});
+			});
+		});
+
+		function showConfirmationMsg(type = 'error') {
+			let formWrapObj = document.querySelector(".formWrap");
+			if (formWrapObj) {
+				formWrapObj.classList.add(type);
+			}
+		}
+	</script>
 </body>
 </html>

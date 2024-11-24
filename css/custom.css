@@ -114,6 +114,9 @@ strong, b {
     padding: 12px;
 }
 
+.btn:focus-visible,
+.btn:focus,
+.btn:active,
 .btn:hover {
     color: var(--primary-color);
     border-color: var(--primary-color);
@@ -1100,4 +1103,45 @@ footer .copyrightTxtWrap p {
         padding-top: 0;
         gap: 2rem;
     }
+}
+
+.formWrap .confrmMsgWrap {
+    display: none;
+}
+.formWrap.error .confrmMsgWrap,
+.formWrap.success .confrmMsgWrap {
+    display: block;
+}
+.formWrap.error form,
+.formWrap.error .headlineWrap,
+.formWrap.success .headlineWrap,
+.formWrap.success form {
+    display: none;
+}
+.formWrap .confrmMsgWrap .confrmMsg {
+    font-stretch: condensed;
+    display: none;
+}
+.formWrap.error .confrmMsgWrap .confrmMsg.error {
+    display: block;
+}
+.formWrap.success .confrmMsgWrap .confrmMsg.success {
+    display: block;
+}
+.formWrap .confrmMsgWrap .confrmMsg .headline {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--secondary-color, #1A4760);
+    margin-bottom: 8px;
+}
+.formWrap .confrmMsgWrap .confrmMsg p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1.4rem;
+
+}
+.formWrap .confrmMsgWrap .confrmMsg.error .headline {
+    color: #DC1212;
 }
